@@ -49,10 +49,6 @@ class FlightService(private val flightRepository: FlightRepository) {
         }
     }
 
-    /*@PostMapping("/articles")
-    fun createNewArticle(@Valid @RequestBody article: Article): Article =
-        articleRepository.save(article)*/
-
     fun createNewFlight(createRequest: FlightDto): FlightDto {
         val flight = Flight()
         valuesToEntity(flight, createRequest)
@@ -82,5 +78,10 @@ class FlightService(private val flightRepository: FlightRepository) {
 
         val savedFlight: Flight = flightRepository.save(existingFlight)
         return convertEntityToDto(savedFlight)
+    }
+
+    fun testFunction(){
+        //Just Test it and delete
+        //it
     }
 }
